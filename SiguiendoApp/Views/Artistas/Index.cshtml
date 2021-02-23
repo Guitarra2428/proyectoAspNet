@@ -1,0 +1,59 @@
+﻿@model SiguiendoApp.Models.Artista
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="toast-header col-md-6">
+            <h1>Artista</h1>
+        </div>
+        <div class="col-md-6">
+            <a asp-controller="Artistas" asp-action="Create" class="btn btn-primary">Nuevo Artista</a>
+        </div>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(a => a.Nombre) </th>
+                    <th>@Html.DisplayNameFor(a => a.Apellido) </th>
+                    <th>@Html.DisplayNameFor(a => a.Nacionalidad)</th>
+                    <th>@Html.DisplayNameFor(a => a.FechadeNacimiento)</th>
+                    <th>@Html.DisplayNameFor(a => a.AnioInicio)</th>
+                    <th>@Html.DisplayNameFor(a => a.GeneroId)</th>
+
+                    <th>Opcions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (Artista item in ViewBag.artistass)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.Apellido</td>
+                        <td>@item.Nacionalidad</td>
+                        <td>@item.FechadeNacimiento</td>
+                        <td>@item.AnioInicio</td>
+                        <td>@item.GeneroId</td>
+
+
+                        <td>
+                            <a asp-controller="Artistas" asp-action="Editar" asp-route-id="@item.IdArtista" class="btn btn-success">Editar</a>
+                            <a asp-controller="Artistas" asp-action="Eliminar" asp-route-id="@item.IdArtista" class="btn btn-danger">Eliminar</a>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+</div>
+
+
+

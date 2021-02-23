@@ -1,0 +1,42 @@
+﻿@model SiguiendoApp.Models.Genero
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Agregar Nuevo Genero</h1>
+
+<div class="container">
+
+    <div class="row col-md-8 col-lg-6 d-block">
+
+        <form method="post" asp-action="Create">
+
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label">Nombre</label>
+                <input type="text" asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+
+            </div>
+
+           
+            <div class="form-group">
+                <input type="submit" value="Agregar Genero" class="btn btn-primary btn-block" />
+
+            </div>
+
+
+
+
+        </form>
+
+    </div>
+</div>
+
+@section scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

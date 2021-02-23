@@ -1,0 +1,39 @@
+﻿@*@model SiguiendoApp.Models.Artista*@
+@*@model SiguiendoApp.Models.Genero*@
+
+@{
+    ViewData["Title"] = "Genero";
+@*@//model  System.Collections.Generic.List<Artista>*@
+}
+
+<h1>Artista</h1>
+
+
+<ul>
+    @foreach (Artista A in Model)
+    {
+      
+    <li>@A.Nombre </li>
+    <li> @A.Genero.Nombre</li>
+      
+       
+
+
+    }
+</ul>
+<br />
+<h1>GERO</h1>
+<br />
+<ul>
+    @foreach (Genero A in ViewBag.Genero)
+    {
+
+        <li>@A.IdGenero</li>
+        <li>@A.Nombre</li>
+
+
+
+
+    }
+</ul>
+

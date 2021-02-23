@@ -1,0 +1,51 @@
+﻿@model SiguiendoApp.Models.Album
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear Album</h1>
+
+
+<div class="container">
+
+    <div class="row">
+
+        <form method="post" asp-action="Create">
+
+            <div asp-validation-summary="ModelOnly"></div>
+            
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"> Nombre Del Album</label>
+                <input type="text" asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaLanzamientoprot" class="control-label"> Fecha de Lanzamineto</label>
+                <input  asp-for="FechaLanzamientoprot" class="form-control" />
+                <span asp-validation-for="FechaLanzamientoprot"></span>
+
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Artista" class="control-label"> Nombre Del Artista</label>
+                <input type="text" asp-for="Artista" class="form-control" />
+                <span asp-validation-for="Artista"></span>
+
+            </div>*@
+            <div class="form-group">
+            <label asp-for="ArtistaId" class="control-label"> IdArtista</label>
+            <input asp-for="ArtistaId" class="form-control" />
+            <span asp-validation-for="ArtistaId"></span>
+
+        </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar " class="btn btn btn-primary btn-block"/>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

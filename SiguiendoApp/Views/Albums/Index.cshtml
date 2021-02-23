@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Album>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Album</h1>
+
+<div class="container">
+    <div class="row">
+        <a asp-controller="Albums" asp-action="Create" class="btn btn-success  col-md-6 offset-md-6 ">Crear Nuevo Album</a>
+    </div>
+
+    <div class="row">
+
+        <table class="table table-bordered table-success">
+
+            <thead>
+
+                <tr>
+                    <th>@Html.DisplayNameFor(N => N.Nombre)</th>
+                    <th>@Html.DisplayNameFor(N => N.FechaLanzamientoprot)</th>
+                    <th>@Html.DisplayNameFor(N => N.ArtistaId)</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.FechaLanzamientoprot</td>                   
+                    <td>@item.ArtistaId</td>
+                    <td>
+                        <a asp-controller="Albums" asp-action="Editar" asp-route-id="@item.IdAlbum" class="btn btn-success">Editar</a>
+                        <a asp-controller="Albums" asp-action="Eliminar" asp-route-id="@item.IdAlbum" class="btn btn-success">Eliminar</a>
+
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+

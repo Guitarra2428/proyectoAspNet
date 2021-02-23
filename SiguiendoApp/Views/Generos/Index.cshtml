@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Genero>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Generos</h1>
+<div class="container">
+    <div class="row">
+        <a asp-controller="Generos" asp-action="Create" class="btn btn-success">Agregar Genero</a>
+    </div>
+
+    <div class="row">
+
+        <table>
+
+            <thead class="table table-bordered table-striped">
+                <tr>
+                    <th>@Html.DisplayNameFor(N => N.Nombre)</th>
+                    <th>options</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>
+                            <a asp-controller="Generos" asp-action="Editar" asp-route-id="@item.IdGenero " class="btn btn-success">Editar</a>
+                            <a asp-controller="Generos" asp-action="Eliminar" asp-route-id="@item.IdGenero " class="btn btn-success">Eliminar</a>
+
+                        </td>
+
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+
+</div>
+
+

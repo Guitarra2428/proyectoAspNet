@@ -1,0 +1,69 @@
+﻿@model SiguiendoApp.Models.Artista
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Elinar Artista</h1>
+
+<div class="container">
+
+    <div class="row col-md-8 col-lg-6 d-block">
+
+        <form method="post" asp-action="EliminarArtista">
+            <input type="hidden" asp-for="IdArtista"/>
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label">Nombre</label>
+                <input type="text" asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label">Apellido</label>
+                <input type="text" asp-for="Apellido" class="form-control" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Nacionalidad" class="control-label">Nacionalida</label>
+                <input type="text" asp-for="Nacionalidad " class="form-control" />
+                <span asp-validation-for="Nacionalidad" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="FechadeNacimiento" class="control-label">Fecha de Lanzamiento</label>
+                <input type="text" asp-for="FechadeNacimiento" class="form-control" />
+                <span asp-validation-for="FechadeNacimiento" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="AnioInicio" class="control-label">Año de Inicio</label>
+                <input type="text" asp-for="AnioInicio " class="form-control" />
+                <span asp-validation-for="AnioInicio" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneroId" class="control-label">Id Genero</label>
+                <input type="text" asp-for="GeneroId " class="form-control" />
+                @*<span asp-validation-for="AnioInicio" class="text-danger"></span>*@
+
+            </div>
+
+            <div class="form-group">
+            <input type="submit" value="Eliminar Artista" class="btn btn-primary" />
+
+        </div>
+            @*<button asp-controller="Artistas" asp-action="Create" class="btn btn-danger btn-block">Guardar</button>*@
+
+
+        </form>
+
+    </div>
+</div>
+@*@section scripts{
+    @{<partial name="_ValidationScriptsPartial"/> }
+ }*@

@@ -1,0 +1,35 @@
+﻿@{ 
+    List<Usuario> usuarios = (List<Usuario>)ViewData["Usuarios"];
+    int Total = usuarios.Count;
+}
+
+
+<table class="table table-striped table-bordered" >
+    <heade>
+        <tr>
+            <th>Nombre</th>
+            <th> Apellido</th>
+            <th> Correo</th>
+            <th>Edad</th>
+
+        </tr>
+
+    </heade>
+
+    <tbody>
+
+        @for( int i=0; i < Total - 1; i++)
+        {
+        <tr>
+
+            <td>@usuarios[i].Nombrre</td>
+            <td>@usuarios[i].Apellido</td>
+            <td>@usuarios[i].Correo</td>
+            <td>@usuarios[i].Edad</td>
+
+        </tr>
+        }
+
+    </tbody>
+
+</table>
